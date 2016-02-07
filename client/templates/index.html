@@ -1,0 +1,56 @@
+<template name="index">
+
+  <div class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Networker</a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse">        
+      <ul class="nav navbar-nav navbar-right">
+        {{> loginButtons}}
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+
+    {{#if currentUser}}
+
+    <div class="row">
+      <div class="col-sm-12">
+        <a href="/new"><button class="btn btn-default button zdepth1">New</button></a>
+      </div>
+    </div>
+
+    <div class="row"> 
+      <div class="col-sm-6">
+        <h1>Contacts</h1>
+        <ul>
+          {{#each contacts}}
+          {{>contact}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+    {{else}}
+
+    <div class="row">
+      <div class="col-sm-12 text-center buffer4">
+        <i class="fa fa-users logo"></i>
+        <h1>Welcome to Networker</h1>
+        <h3>The simplest way to keep track of your network.</h3>
+      </div>
+    </div>
+
+    {{/if}}
+
+    <!-- /container -->
+  </div>
+
+</template>
