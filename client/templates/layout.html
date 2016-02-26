@@ -1,0 +1,23 @@
+<template name="layout">
+  <header>
+    {{> nav }}
+  </header>
+
+  {{#if currentUser}}
+  {{> yield}}
+  {{else}}
+  <div id="home">
+    <div class="container">
+      <div class="vert-container">
+        <div class="vert text-center">
+          <i class="fa fa-users logo"></i>
+          <h1>Welcome to Networker</h1>
+          <h3>The simplest way to keep track of your network.</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+
+</template>
+
