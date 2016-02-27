@@ -1,6 +1,6 @@
 <template name="layout">
   <header>
-    {{> nav }}
+    <!-- {{> nav }} -->
   </header>
 
   {{#if currentUser}}
@@ -13,6 +13,8 @@
           <i class="fa fa-users logo"></i>
           <h1>Welcome to Networker</h1>
           <h3>The simplest way to keep track of your network.</h3>
+          <button id="loginFacebook" class="btn btn-default">Login with Facebook</button>
+          <button id="loginGoogle" class="btn btn-default">Login with Google</button>
         </div>
       </div>
     </div>

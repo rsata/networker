@@ -1,4 +1,4 @@
-console.log(this._id)
+
 Template.editContact.helpers ({
   formData: function () {
     return Contacts.findOne({_id: this._id});    

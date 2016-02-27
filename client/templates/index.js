@@ -2,12 +2,18 @@ Meteor.subscribe("contacts");
 
 Template.index.helpers({
   contacts: function () {
-  return Contacts.find();
-},
+    return Contacts.find();
+  },
 
-loggedInUser: function () {
-  return Meteor.user().username || Meteor.user().profile.name || Meteor.userId().services.google.given_name;
-},
+  loggedInUser: function () {
+    return Meteor.user().username || Meteor.user().profile.name || Meteor.userId().services.google.given_name;
+  }
+});
+
+Template.index.events({
+  'click #logout': function () {
+    Meteor.logout();
+  }
 });
 
 // Accounts.ui.config({
